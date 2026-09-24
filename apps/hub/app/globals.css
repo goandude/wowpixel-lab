@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Pick up Tailwind classes used inside the shared @wowpixel-lab/ui package. */
+@source "../../packages/ui/dist";
+
+body {
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}

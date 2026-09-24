@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bytecade 404 — Arcade Collection</title>
+<meta name="description" content="Five tiny browser games for a missing page. Instant play, no install, works offline.">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<canvas id="backdrop" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div>
+    <div class="brand">
+      <span class="glyph" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h10a5 5 0 0 1 5 5v3a3 3 0 0 1-5.2 2L15 15H9l-1.8 2A3 3 0 0 1 2 15v-3a5 5 0 0 1 5-5Zm-.5 3v1.5H5v1h1.5V14h1v-1.5H9v-1H7.5V10h-1ZM16 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2-2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+      </span>
+      <span>
+        <span class="name">Bytecade</span><br>
+        <span class="label sub">404 / Arcade</span>
+      </span>
+    </div>
+    <button class="icon-btn" id="sound" type="button" aria-pressed="true" aria-label="Sound effects">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path id="sound-path" d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Zm-2.5 7.9a8 8 0 0 0 0-15.8v2.1a6 6 0 0 1 0 11.6v2.1Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Featured games">
+<h2>New games</h2>
+<div class="row" style="display:flex;gap:20px;flex-wrap:wrap">
+<a class="btn btn-primary" href="afterburn/drift.html">Razorwing Pursuit — space dogfight with soundtrack</a>
+<a class="btn btn-secondary" href="pocket-scramble.html">Pocket Scramble — five-round word rivalry</a>
+</div>
+</section>
+
+
+  <section class="hero">
+    <div class="row">
+      <span class="chip"><span class="dot"></span>Error 404 // Arcade Override</span>
+      <span class="chip quiet">5 Games Ready</span>
+    </div>
+
+    <h1>Bytecade <em>404</em></h1>
+    <p class="lede">Page missing. Play on.</p>
+    <p class="blurb">Five tiny games for a little downtime. Instant play, zero install — each one runs entirely in your browser, offline, with scores saved on your own machine.</p>
+
+    <div class="stats">
+      <div><span class="label">Titles</span><span class="v-primary">05</span></div>
+      <div><span class="label">Scores</span><span class="v-tertiary">Local</span></div>
+      <div><span class="label">Credits</span><span class="v-secondary">Free</span></div>
+    </div>
+
+    <button class="btn btn-primary" id="quick-play" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm3.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm3.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
+      <span id="quick-play-label">Quick Play — Random Game</span>
+    </button>
+  </section>
+
+  <section class="featured" aria-labelledby="featured-title">
+    <div class="art">
+      <!-- 404 Invaders: alien formation over a defending ship. -->
+      <svg viewBox="0 0 400 220" role="img" aria-label="Rows of pixel aliens descending toward a defending ship">
+        <defs>
+          <linearGradient id="fsky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#101a36"/><stop offset="1" stop-color="#080e1d"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="220" fill="url(#fsky)"/>
+        <g fill="#2fd9f4" opacity=".5">
+          <rect x="30" y="24" width="2" height="2"/><rect x="96" y="52" width="2" height="2"/>
+          <rect x="168" y="18" width="2" height="2"/><rect x="246" y="60" width="2" height="2"/>
+          <rect x="320" y="30" width="2" height="2"/><rect x="368" y="74" width="2" height="2"/>
+          <rect x="62" y="96" width="2" height="2"/><rect x="290" y="104" width="2" height="2"/>
+        </g>
+        <g id="inv-row" fill="#66f796">
+          <g transform="translate(70,44)"><rect x="4" y="0" width="12" height="4"/><rect x="0" y="4" width="20" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+          <g transform="translate(150,44)"><rect x="4" y="0" width="12" height="4"/><rect x="0" y="4" width="20" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+          <g transform="translate(230,44)"><rect x="4" y="0" width="12" height="4"/><rect x="0" y="4" width="20" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+          <g transform="translate(310,44)"><rect x="4" y="0" width="12" height="4"/><rect x="0" y="4" width="20" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+        </g>
+        <g fill="#8aebff">
+          <g transform="translate(110,86)"><rect x="0" y="0" width="20" height="4"/><rect x="4" y="4" width="12" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+          <g transform="translate(190,86)"><rect x="0" y="0" width="20" height="4"/><rect x="4" y="4" width="12" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+          <g transform="translate(270,86)"><rect x="0" y="0" width="20" height="4"/><rect x="4" y="4" width="12" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/></g>
+        </g>
+        <rect x="197" y="128" width="4" height="26" fill="#ffb2b7"/>
+        <g transform="translate(180,170)" fill="#dde2f8">
+          <rect x="16" y="0" width="8" height="6"/><rect x="8" y="6" width="24" height="8"/><rect x="0" y="14" width="40" height="8"/>
+        </g>
+        <rect x="0" y="206" width="400" height="14" fill="#22d3ee" opacity=".18"/>
+      </svg>
+      <div class="badges">
+        <span class="badge t" aria-hidden="true">♪ Timed Soundtrack</span>
+        <span class="badge p">5 Waves</span>
+      </div>
+    </div>
+
+    <div class="col">
+      <span class="tag">Featured Cabinet</span>
+      <div class="meta">
+        <h3 id="featured-title">404 Invaders</h3>
+        <span class="genre">Space Defender</span>
+      </div>
+      <p>Page not found. Enemies found. Defend your little corner of the internet across five waves of glitch swarms — each wave faster and heavier than the last. The only game here with a full soundtrack, its lyric ticker timed to the music.</p>
+
+      <div class="score-strip">
+        <div class="who">
+          <span class="slot" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 9.2 8.6 2 9.3l5.5 4.8L5.8 21 12 17.3 18.2 21l-1.7-6.9L22 9.3l-7.2-.7L12 2Z"/></svg>
+          </span>
+          <span>
+            <span class="k">Your best</span><br>
+            <span class="label sub">Saved in this browser</span>
+          </span>
+        </div>
+        <span class="v" data-best="404-invaders-best" data-unit="pts">—</span>
+      </div>
+
+      <a class="btn btn-accent" href="invaders.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5Z"/></svg>
+        <span>Play 404 Invaders</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="head">
+    <div class="title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--primary)"><path d="M3 3h8v8H3V3Zm10 0h8v8h-8V3ZM3 13h8v8H3v-8Zm10 0h8v8h-8v-8Z"/></svg>
+      <h2>The Five Arcades</h2>
+    </div>
+    <span class="note">Select cabinet</span>
+  </div>
+
+  <div class="cabinets">
+
+    <article class="cabinet">
+      <div class="body">
+        <div class="thumb">
+          <!-- Coastal Cruise: three-lane road at sunset. -->
+          <svg viewBox="0 0 112 112" role="img" aria-label="Top-down three-lane road with a car and traffic cones">
+            <defs><linearGradient id="road-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2a52"/><stop offset="1" stop-color="#16203a"/></linearGradient></defs>
+            <rect width="112" height="112" fill="url(#road-sky)"/>
+            <circle cx="56" cy="20" r="14" fill="#ffb2b7" opacity=".45"/>
+            <rect x="0" y="34" width="112" height="78" fill="#1c2436"/>
+            <rect x="22" y="34" width="68" height="78" fill="#2f3445"/>
+            <g fill="#bbc9cd" opacity=".7">
+              <rect x="43" y="40" width="3" height="12"/><rect x="43" y="62" width="3" height="12"/><rect x="43" y="84" width="3" height="12"/>
+              <rect x="66" y="40" width="3" height="12"/><rect x="66" y="62" width="3" height="12"/><rect x="66" y="84" width="3" height="12"/>
+            </g>
+            <g transform="translate(48,74)"><rect x="0" y="0" width="16" height="26" rx="3" fill="#22d3ee"/><rect x="3" y="4" width="10" height="7" fill="#08131d"/><rect x="3" y="17" width="10" height="5" fill="#a2eeff"/></g>
+            <g transform="translate(26,44)"><rect x="0" y="0" width="14" height="22" rx="3" fill="#ffb2b7"/><rect x="3" y="12" width="8" height="6" fill="#67001b"/></g>
+            <polygon points="78,54 82,64 74,64" fill="#ff9d3d"/>
+          </svg>
+          <span class="flag" style="color:var(--primary)">Boost</span>
+        </div>
+        <div class="info">
+          <div>
+            <span class="genre" style="color:var(--primary)">Retro Racer</span>
+            <h3>Coastal Cruise</h3>
+            <p class="desc">404: Route Not Found. A top-down sunset cruiser — dodge traffic, cones, barriers and slick oil traps.</p>
+          </div>
+          <div class="facts">
+            <span class="best">Best <strong data-best="coastal-best" data-unit="m">—</strong></span>
+            <span class="input">Steer / Boost</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="hint">3 lives</span>
+        <a class="play" href="racer.html">Play now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cabinet">
+      <div class="body">
+        <div class="thumb">
+          <!-- 404 Invaders -->
+          <svg viewBox="0 0 112 112" role="img" aria-label="Pixel aliens above a defending ship">
+            <rect width="112" height="112" fill="#0b1226"/>
+            <g fill="#2fd9f4" opacity=".55"><rect x="14" y="12" width="2" height="2"/><rect x="88" y="20" width="2" height="2"/><rect x="52" y="8" width="2" height="2"/><rect x="96" y="60" width="2" height="2"/><rect x="18" y="52" width="2" height="2"/></g>
+            <g fill="#66f796">
+              <g transform="translate(20,26)"><rect x="3" y="0" width="9" height="3"/><rect x="0" y="3" width="15" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/></g>
+              <g transform="translate(48,26)"><rect x="3" y="0" width="9" height="3"/><rect x="0" y="3" width="15" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/></g>
+              <g transform="translate(76,26)"><rect x="3" y="0" width="9" height="3"/><rect x="0" y="3" width="15" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/></g>
+            </g>
+            <g fill="#8aebff">
+              <g transform="translate(34,50)"><rect x="0" y="0" width="15" height="3"/><rect x="3" y="3" width="9" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/></g>
+              <g transform="translate(62,50)"><rect x="0" y="0" width="15" height="3"/><rect x="3" y="3" width="9" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/></g>
+            </g>
+            <rect x="54" y="70" width="3" height="14" fill="#ffb2b7"/>
+            <g transform="translate(43,90)" fill="#dde2f8"><rect x="10" y="0" width="6" height="4"/><rect x="5" y="4" width="16" height="5"/><rect x="0" y="9" width="26" height="5"/></g>
+          </svg>
+          <span class="flag" style="color:var(--tertiary)">5 Waves</span>
+        </div>
+        <div class="info">
+          <div>
+            <span class="genre" style="color:var(--tertiary)">Space Shooter</span>
+            <h3>404 Invaders</h3>
+            <p class="desc">Protect your buffer through five waves of attacking neon bugs, with a soundtrack and timed lyric ticker.</p>
+          </div>
+          <div class="facts">
+            <span class="best">Best <strong data-best="404-invaders-best" data-unit="pts">—</strong></span>
+            <span class="input">Fire / Move</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="hint">3 lives</span>
+        <a class="play" href="invaders.html">Play now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cabinet">
+      <div class="body">
+        <div class="thumb">
+          <!-- The Void Explorer: astronaut on lunar ledges. -->
+          <svg viewBox="0 0 112 112" role="img" aria-label="An astronaut leaping between lunar platforms">
+            <defs><linearGradient id="void-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101a36"/><stop offset="1" stop-color="#1b1430"/></linearGradient></defs>
+            <rect width="112" height="112" fill="url(#void-sky)"/>
+            <circle cx="84" cy="24" r="13" fill="#a2eeff" opacity=".25"/>
+            <g fill="#dde2f8" opacity=".5"><rect x="12" y="18" width="2" height="2"/><rect x="40" y="10" width="2" height="2"/><rect x="62" y="40" width="2" height="2"/><rect x="24" y="44" width="2" height="2"/></g>
+            <rect x="0" y="86" width="44" height="26" fill="#3b3350"/><rect x="0" y="86" width="44" height="4" fill="#5d5378"/>
+            <rect x="60" y="70" width="52" height="42" fill="#3b3350"/><rect x="60" y="70" width="52" height="4" fill="#5d5378"/>
+            <g fill="#ffcf63"><rect x="50" y="52" width="6" height="6"/></g>
+            <g transform="translate(30,58)">
+              <rect x="2" y="0" width="12" height="11" rx="3" fill="#e8eefc"/>
+              <rect x="4" y="3" width="8" height="5" rx="2" fill="#22d3ee"/>
+              <rect x="3" y="11" width="10" height="9" fill="#cfd8ee"/>
+              <rect x="0" y="12" width="4" height="7" fill="#e8eefc"/><rect x="12" y="12" width="4" height="7" fill="#e8eefc"/>
+            </g>
+            <g fill="#66f796"><rect x="74" y="60" width="4" height="4"/><rect x="70" y="64" width="12" height="4"/><rect x="70" y="56" width="4" height="4"/><rect x="78" y="56" width="4" height="4"/></g>
+          </svg>
+          <span class="flag" style="color:var(--primary)">Endless</span>
+        </div>
+        <div class="info">
+          <div>
+            <span class="genre" style="color:var(--primary-fixed)">Pixel Runner</span>
+            <h3>The Void Explorer</h3>
+            <p class="desc">Jump across an endless lunar landscape, stomp alien glitches and collect lost data coins.</p>
+          </div>
+          <div class="facts">
+            <span class="best">Best <strong data-best="void_explorer_hi" data-unit="pts">—</strong></span>
+            <span class="input">Jump / Stomp</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="hint">3 lives</span>
+        <a class="play" href="void-explorer.html">Play now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cabinet">
+      <div class="body">
+        <div class="thumb">
+          <!-- BreakOut of Cache: bricks spelling 404 over paddle and ball. -->
+          <svg viewBox="0 0 112 112" role="img" aria-label="Brick wall spelling 404 above a paddle and ball">
+            <rect width="112" height="112" fill="#0a1120"/>
+            <g>
+              <rect x="10" y="16" width="9" height="6" fill="#64e9ef"/><rect x="21" y="16" width="9" height="6" fill="#cafa78"/><rect x="32" y="16" width="9" height="6" fill="#64e9ef"/>
+              <rect x="47" y="16" width="9" height="6" fill="#cafa78"/><rect x="58" y="16" width="9" height="6" fill="#64e9ef"/>
+              <rect x="73" y="16" width="9" height="6" fill="#64e9ef"/><rect x="84" y="16" width="9" height="6" fill="#cafa78"/><rect x="95" y="16" width="7" height="6" fill="#64e9ef"/>
+              <rect x="10" y="24" width="9" height="6" fill="#ff71a5"/><rect x="32" y="24" width="9" height="6" fill="#ff71a5"/>
+              <rect x="47" y="24" width="9" height="6" fill="#64e9ef"/><rect x="58" y="24" width="9" height="6" fill="#cafa78"/>
+              <rect x="73" y="24" width="9" height="6" fill="#ff71a5"/><rect x="95" y="24" width="7" height="6" fill="#ff71a5"/>
+              <rect x="10" y="32" width="9" height="6" fill="#64e9ef"/><rect x="32" y="32" width="9" height="6" fill="#64e9ef"/>
+              <rect x="47" y="32" width="9" height="6" fill="#cafa78"/><rect x="58" y="32" width="9" height="6" fill="#64e9ef"/><rect x="69" y="32" width="4" height="6" fill="#cafa78"/>
+              <rect x="73" y="32" width="9" height="6" fill="#64e9ef"/><rect x="95" y="32" width="7" height="6" fill="#64e9ef"/>
+              <rect x="10" y="40" width="9" height="6" fill="#cafa78"/><rect x="32" y="40" width="9" height="6" fill="#cafa78"/>
+              <rect x="73" y="40" width="9" height="6" fill="#cafa78"/><rect x="95" y="40" width="7" height="6" fill="#cafa78"/>
+            </g>
+            <circle cx="62" cy="72" r="4" fill="#f3ffff"/>
+            <rect x="40" y="94" width="34" height="6" rx="2" fill="#879ead"/>
+            <rect x="44" y="95" width="26" height="2" fill="#dcecf3"/>
+          </svg>
+          <span class="flag" style="color:var(--tertiary)">3 Levels</span>
+        </div>
+        <div class="info">
+          <div>
+            <span class="genre" style="color:var(--primary-dim)">Brick Breaker</span>
+            <h3>BreakOut of Cache</h3>
+            <p class="desc">Smash a 404 made of bricks, then clear two more layouts as the ball picks up speed.</p>
+          </div>
+          <div class="facts">
+            <span class="best">Best <strong data-best="arcade-breakout-best" data-unit="pts">—</strong></span>
+            <span class="input">Tap / Keys</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="hint">3 lives</span>
+        <a class="play" href="breakout.html">Play now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="cabinet">
+      <div class="body">
+        <div class="thumb">
+          <!-- Flappy Byte: mail ship threading crystal asteroid columns. -->
+          <svg viewBox="0 0 112 112" role="img" aria-label="A mail ship flying between crystal rock columns">
+            <defs><linearGradient id="cc-sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070e25"/><stop offset="1" stop-color="#23213e"/></linearGradient></defs>
+            <rect width="112" height="112" fill="url(#cc-sky)"/>
+            <circle cx="22" cy="90" r="26" fill="#2c5378" opacity=".55"/>
+            <g fill="#c6dcff" opacity=".7"><rect x="36" y="14" width="2" height="2"/><rect x="90" y="30" width="2" height="2"/><rect x="66" y="8" width="2" height="2"/><rect x="18" y="26" width="2" height="2"/></g>
+            <rect x="74" y="0" width="22" height="34" fill="#74604f"/><rect x="74" y="0" width="22" height="34" fill="none" stroke="#baa080"/>
+            <polygon points="83,10 89,16 86,28 79,21" fill="#59c4ed"/>
+            <rect x="74" y="66" width="22" height="46" fill="#74604f"/><rect x="74" y="66" width="22" height="46" fill="none" stroke="#baa080"/>
+            <polygon points="83,76 89,82 86,94 79,87" fill="#59c4ed"/>
+            <g transform="translate(78,42)"><rect x="0" y="0" width="14" height="10" fill="#ffe1a0"/><polyline points="0,0 7,6 14,0" fill="none" stroke="#c98a32"/></g>
+            <g transform="translate(34,52)">
+              <polygon points="-10,-3 -17,0 -10,4" fill="#ff993e"/>
+              <polygon points="-11,-5 -5,-8 6,-7 12,-3 12,3 7,7 -6,7 -12,4" fill="#e7e5d8"/>
+              <polygon points="5,-6 10,-2 11,2 6,4 3,2 3,-3" fill="#126187"/>
+              <rect x="-11" y="-4" width="3" height="7" fill="#c26b2a"/>
+            </g>
+          </svg>
+          <span class="flag" style="color:var(--secondary)">One-touch</span>
+        </div>
+        <div class="info">
+          <div>
+            <span class="genre" style="color:var(--secondary)">Space Tapper</span>
+            <h3>Flappy Byte</h3>
+            <p class="desc">Cosmic Courier: fly a mail ship through crystal asteroid gaps and collect the lost envelopes.</p>
+          </div>
+          <div class="facts">
+            <span class="best">Best <strong data-best="arcade-flappy-best" data-unit="pts">—</strong></span>
+            <span class="input">One-touch</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="hint">Endless</span>
+        <a class="play" href="flappy.html">Play now
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 11h12.2l-5.6-5.6L12 4l8 8-8 8-1.4-1.4 5.6-5.6H4v-2Z"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+  <section class="telemetry" aria-labelledby="tele-title">
+    <div class="title" style="display:flex;align-items:center;gap:8px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--primary)"><path d="M9 2h2v3h2V2h2v3h1a3 3 0 0 1 3 3v1h3v2h-3v2h3v2h-3v1a3 3 0 0 1-3 3h-1v3h-2v-3h-2v3H9v-3H8a3 3 0 0 1-3-3v-1H2v-2h3v-2H2v-2h3V8a3 3 0 0 1 3-3h1V2Zm0 7v6h6V9H9Z"/></svg>
+      <span class="label" id="tele-title" style="color:var(--on-surface);font-weight:700">Cabinet Telemetry</span>
+    </div>
+    <div class="grid">
+      <div class="cell">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--tertiary);flex-shrink:0"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+        <span><span class="k">No server</span><br><span class="v">Rendered client-side</span></span>
+      </div>
+      <div class="cell">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--primary);flex-shrink:0"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4v12h10V6H7Zm5 14.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+        <span><span class="k">Touch controls</span><br><span class="v">On-screen buttons</span></span>
+      </div>
+      <div class="cell">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--secondary);flex-shrink:0"><path d="M2.4 5.8 3.8 4.4 20.6 21.2l-1.4 1.4-3.3-3.3L12 23l-9.9-9.9a14 14 0 0 1 4.6-3L2.4 5.8ZM12 3c3.9 0 7.4 1.5 9.9 4l-2.6 2.6A10 10 0 0 0 9.6 6.6L7.3 4.3A13.9 13.9 0 0 1 12 3Z"/></svg>
+        <span><span class="k">Plays offline</span><br><span class="v">Static files only</span></span>
+      </div>
+      <div class="cell">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--primary-dim);flex-shrink:0"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Z"/></svg>
+        <span><span class="k">Generated audio</span><br><span class="v">Web Audio synthesis</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="embed-kit" aria-labelledby="embed-title">
+    <div class="head">
+      <div class="title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--primary)"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4Zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4Z"/></svg>
+        <h2 id="embed-title">Put a game on your 404</h2>
+      </div>
+      <span class="note">One line</span>
+    </div>
+
+    <p class="embed-intro">Pick a game, copy the snippet, paste it into your error page. Nothing to download and no files to host — the game loads from here, so it keeps working however deep the missing URL is. Your server keeps returning its own 404 status; an iframe does not change it.</p>
+
+    <div class="embed-controls">
+      <label>
+        <span class="label">Game</span>
+        <select id="embed-game">
+          <option value="racer.html" data-ratio="1/1" data-title="Coastal Cruise">Coastal Cruise</option>
+          <option value="invaders.html" data-ratio="5/4" data-title="404 Invaders" selected>404 Invaders</option>
+          <option value="void-explorer.html" data-ratio="3/2" data-title="The Void Explorer">The Void Explorer</option>
+          <option value="breakout.html" data-ratio="4/3" data-title="BreakOut of Cache">BreakOut of Cache</option>
+          <option value="flappy.html" data-ratio="4/3" data-title="Flappy Byte">Flappy Byte</option>
+          <option value="snake.html" data-ratio="4/3" data-title="Sssite Not Found">Sssite Not Found</option>
+        </select>
+      </label>
+      <label>
+        <span class="label">Width</span>
+        <select id="embed-width">
+          <option value="100%" selected>Full width</option>
+          <option value="720px">720 px</option>
+          <option value="560px">560 px</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="embed-snippet">
+      <pre><code id="embed-code"></code></pre>
+      <button class="btn btn-primary" id="embed-copy" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+        <span id="embed-copy-label">Copy snippet</span>
+      </button>
+    </div>
+
+    <details class="embed-notes">
+      <summary>Notes for your setup</summary>
+      <ul>
+        <li><strong>Keep the 404 status.</strong> Serve your error page with HTTP 404 as you do now. Do not swap it for a redirect or a meta refresh — those turn the 404 into a 302 or 200 and confuse crawlers.</li>
+        <li><strong>Content Security Policy.</strong> If your site sets one, add <code>https://goandude.github.io</code> to <code>frame-src</code>.</li>
+        <li><strong>Offline or air-gapped sites.</strong> The snippet loads from this origin, so it needs the visitor to reach it. To self-host instead, copy the game's files out of <a href="https://github.com/goandude/404-arcade">the repo</a> and point the snippet at your own copy.</li>
+        <li><strong>Any size works.</strong> The <code>aspect-ratio</code> above is just a tidy default — the game fits whatever box you give it, letterboxing rather than cropping, so change it freely.</li>
+        <li><strong>Want a link back?</strong> Add <code>&amp;credit=1</code> to the URL for a small "More games" link in the corner. It is off by default so the embed adds nothing to your page you did not ask for.</li>
+        <li><strong>Scores</strong> save to your visitor's browser, scoped to your site. Nothing is sent anywhere.</li>
+      </ul>
+    </details>
+  </section>
+
+  <div class="eject">
+    <div class="row">
+      <a class="btn btn-secondary" href="/">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 7v4H7.8l3.6-3.6L10 6l-6 6 6 6 1.4-1.4L7.8 13H21V7h-2Z"/></svg>
+        <span>Eject — back to safety</span>
+      </a>
+    </div>
+    <p class="sig">Bytecade v4.04 — scores saved in this browser only</p>
+  </div>
+
+</main>
+
+<nav class="links" aria-label="Other projects">
+  <div>
+    <a href="arcade.html" aria-current="page">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 7h10a5 5 0 0 1 5 5v3a3 3 0 0 1-5.2 2L15 15H9l-1.8 2A3 3 0 0 1 2 15v-3a5 5 0 0 1 5-5Z"/></svg>
+      <span class="label">Arcade</span>
+    </a>
+    <a href="afterburn/index.html">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 15v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8l-8 5v2l8-2.5V17l-2 1.5V20l3.5-1 3.5 1v-1.5L13 17v-4.5L21 15Z"/></svg>
+      <span class="label">Afterburn</span>
+    </a>
+    <a href="Battle%20Royale/index.html">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 3a7 7 0 0 1 7 7 7 7 0 0 1-7 7 7 7 0 0 1-7-7 7 7 0 0 1 7-7Zm0 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+      <span class="label">Battle Royale</span>
+    </a>
+    <a href="https://github.com/goandude/404-arcade">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+      <span class="label">Source</span>
+    </a>
+  </div>
+</nav>
+
+<script src="home.js"></script>
+</body>
+</html>

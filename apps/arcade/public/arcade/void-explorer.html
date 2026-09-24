@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - The Void Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="embed.css"><script>if(new URLSearchParams(location.search).has("embed"))document.documentElement.className+=" embed";</script><script src="embed.js" defer></script></head>
+<body>
+  <div class="stars-bg" aria-hidden="true"></div>
+  
+  <div class="card-container">
+    <!-- Left Column: Info, Narrative & Controls -->
+    <div class="info-column">
+      <div class="glitch-title" data-text="404:">404:</div>
+      <h1 class="game-subtitle">The Void Explorer</h1>
+      <div class="story-tagline">404 - THE PAGE IS GONE.<br>NAVIGATE THE VOID!</div>
+
+      <p class="goal"><strong>YOUR GOAL</strong> Keep exploring to the right for as long as you can. Jump over gaps and spikes, collect data coins, and stomp aliens. You have 3 lives — how far can you go?<span>Coins +35 · Aliens +100 · Every 100m +100<br>New challenges appear as you explore. No finish line.</span></p>
+
+      <div class="controls-card">
+        <div class="controls-heading">CONTROLS & SPEC</div>
+        <ul class="specs-list">
+          <li><strong>Genre:</strong> Retro Pixel Platformer</li>
+          <li><strong>Move:</strong> <kbd>A</kbd> <kbd>D</kbd> or <kbd>←</kbd> <kbd>→</kbd></li>
+          <li><strong>Jump:</strong> <kbd>W</kbd> / <kbd>Space</kbd> / <kbd>↑</kbd></li>
+          <li><strong>Stomp:</strong> Jump on alien glitches to vaporize them!</li>
+          <li><strong>Pause:</strong> <kbd>P</kbd></li>
+        </ul>
+      </div>
+
+      <a href="arcade.html" style="color:#00f0ff;font-size:12px">← All arcade games</a>
+      <div class="actions-row">
+        <a href="/" class="btn-home" id="home-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Safety
+        </a>
+        <button id="sound-toggle" class="btn-icon" aria-label="Toggle Sound" title="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Game Viewport -->
+    <div class="game-column">
+      <div class="screen-frame">
+        <!-- Canvas Game Screen -->
+        <canvas id="gameCanvas" width="480" height="320" tabindex="0" aria-label="Endless platformer: travel right, collect coins, and survive with three lives. Arrows or A/D move; Space jumps; P pauses."></canvas>
+
+        <!-- Touch Controls for mobile/tablets -->
+        <div class="touch-controls" id="touch-controls">
+          <div class="touch-group left-group">
+            <button id="touch-left" class="touch-btn" aria-label="Move Left">◀</button>
+            <button id="touch-right" class="touch-btn" aria-label="Move Right">▶</button>
+          </div>
+          <div class="touch-group right-group">
+            <button id="touch-jump" class="touch-btn jump-btn" aria-label="Jump">JUMP</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

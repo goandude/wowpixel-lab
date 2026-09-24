@@ -1,0 +1,119 @@
+/* Embed mode: strips the surrounding site so a game can sit in an iframe on
+   someone else's 404 page. Activated by ?embed=1, which sets class="embed"
+   on <html> from a tiny inline script in each game's <head> — setting it
+   there rather than from embed.js keeps the full-page chrome from flashing
+   before it is hidden.
+
+   Nothing here applies without .embed, so the normal pages are untouched. */
+
+/* The game fills whatever frame the host gives it. The HUD and control bar
+   keep their natural height, the play area absorbs the rest, and the canvas
+   letterboxes inside it with object-fit — so any iframe aspect-ratio works
+   and none of the chrome is ever clipped. */
+html.embed, html.embed body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+html.embed body {
+  display: flex;
+  flex-direction: column;
+  background-image: none;
+}
+
+/* Site furniture. `main > .eyebrow` is deliberately a child selector: the
+   same class is reused on the in-game overlay badge, which must stay. */
+html.embed > body > header,
+html.embed > body > footer,
+html.embed main > nav,
+html.embed main > .links,
+html.embed main > .goal,
+html.embed main > .eyebrow,
+html.embed main > h1,
+html.embed main > .tagline,
+html.embed .intro,
+html.embed .music-board,
+html.embed .info-column {
+  display: none !important;
+}
+
+html.embed main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html.embed .cabinet {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+}
+
+/* The Void Explorer uses its own two-column shell rather than .cabinet. */
+html.embed .card-container,
+html.embed .game-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+/* The play area takes the space the HUD and controls do not need. */
+html.embed .screen,
+html.embed .screen-frame {
+  flex: 1;
+  min-height: 120px;
+  aspect-ratio: auto !important;
+  border-radius: 0;
+  margin: 0;
+}
+
+html.embed .screen canvas,
+html.embed .screen-frame canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* A quiet way back to the full arcade, so an embedded game is not a
+   dead end. Added by embed.js and always opened in the top window. */
+html.embed .embed-mark {
+  position: fixed;
+  right: 8px;
+  bottom: 6px;
+  z-index: 40;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(7, 13, 23, .72);
+  color: #7f9ab0;
+  font: 9px/1.4 'IBM Plex Mono', ui-monospace, monospace;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: color .2s;
+}
+html.embed .embed-mark:hover { color: #64e9ef; text-decoration: none; }
+
+@media (max-width: 420px) {
+  html.embed .embed-mark { display: none; }
+}

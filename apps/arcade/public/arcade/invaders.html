@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 Invaders — Defend the missing page</title>
+<link rel="stylesheet" href="invaders.css"><script src="invaders-music.js" defer></script><script src="invaders.js" defer></script>
+<link rel="stylesheet" href="embed.css"><script>if(new URLSearchParams(location.search).has("embed"))document.documentElement.className+=" embed";</script><script src="embed.js" defer></script></head>
+<body>
+<header><a href="/" class="brand"><span>✳</span> LOST SIGNAL</a><span class="header-note">ERROR PAGE / ARCADE 002</span></header>
+<main>
+<section class="intro"><div class="eyebrow">PAGE NOT FOUND. ENEMIES FOUND.</div><h1>404<span> INVADERS</span></h1><p>This page is missing. The glitches aren’t.<br>Defend your little corner of the internet.</p></section>
+<section class="cabinet" aria-label="404 Invaders arcade game">
+<section class="music-board" aria-label="Song lyrics">
+<div class="music-meta"><span>♫ INVADERS RIGHT BEFORE OUR EYES</span><label>MUSIC <input id="music-volume" type="range" min="0" max="100" value="40" aria-label="Background music volume"></label><button id="lyrics-toggle" type="button" aria-pressed="true">LYRICS ON</button></div>
+<div class="lyric-window" id="lyric-window" aria-hidden="true"><div id="lyric-strip"></div></div>
+<div class="music-meta"><span id="music-status" role="status">PRESS PLAY TO START THE SOUNDTRACK</span><span>TIMED LYRICS</span></div>
+<details class="lyric-transcript"><summary>Read lyrics</summary><p>Full supplied lyrics below. The board follows the vocal lines detected in this recording; timing is approximate.</p><p id="lyric-transcript"></p></details>
+<audio id="background-music" src="invaders-theme.mp3" preload="metadata" loop></audio>
+</section>
+<div class="hud"><div>SCORE <b id="score">00000</b></div><div>BEST <b id="best">00000</b></div><div>LEVEL <b id="wave">1 / 5</b></div><div class="health">LIVES <b id="lives">♥ ♥ ♥</b></div></div>
+<div class="screen"><canvas id="invaders" width="800" height="500" tabindex="0" aria-label="Move with left and right arrows or A and D. Hold Space to shoot. P pauses."></canvas><div class="overlay" id="overlay"><div class="tag" id="tag">INCOMING TRANSMISSION</div><h2 id="message">The bugs fight back.</h2><p id="detail">Clear every glitch before they reach your ship.<br>Dodge their shots. Beat all 5 levels. Each one gets faster.</p><button id="play">DEFEND THE PAGE <span>→</span></button><small id="hint">PRESS ENTER TO START</small></div></div>
+<div class="ammo-panel"><label for="ammo-meter">AMMO <b id="ammo-count">20 / 20</b></label><meter id="ammo-meter" min="0" max="20" low="5" high="12" optimum="20" value="20">20 of 20 rounds</meter><span id="ammo-status">RELEASE FIRE TO RELOAD</span></div>
+<div class="controls"><span><kbd>←</kbd> <kbd>→</kbd> MOVE <i>/</i> <kbd>SPACE</kbd> FIRE</span><button id="sound" type="button" aria-pressed="true" aria-label="Mute game sounds">SOUND ON</button><button id="pause" disabled>PAUSE <kbd>P</kbd></button></div>
+<div class="touch"><button data-key="left" aria-label="Move left">←</button><button data-key="right" aria-label="Move right">→</button><button data-key="fire">FIRE ↟</button></div>
+</section>
+<p class="goal"><strong>THE MISSION</strong> Beat 5 increasingly fast levels and protect your 3 lives.<br><span>10–30 points per glitch · 15 per asteroid · 100 bonus per level · An invasion ends your run.<br>Shoot drifting asteroids or dodge them — an impact costs a life.<br>20 rounds per charge. Release fire to reload in 2.5 seconds.</span></p>
+<div class="links"><a href="/">← Back to safety</a><a href="arcade.html">All arcade games ↗</a></div>
+<p class="sr-only" id="announce" aria-live="polite"></p>
+</main><footer><span>404: A PAGE LOST IN SPACE</span><span>BUILT FOR A LITTLE DOWNTIME ✳</span></footer>
+</body></html>

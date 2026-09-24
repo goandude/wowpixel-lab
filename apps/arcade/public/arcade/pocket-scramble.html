@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Pocket Scramble — a little word rivalry</title>
+  <link rel="stylesheet" href="pocket-scramble.css">
+  <script src="pocket-scramble.js" defer></script>
+</head>
+<body>
+<main>
+  <header><a href="arcade.html" class="brand">PS<span>✳</span></a><span class="eyebrow">A LITTLE WORD RIVALRY</span><button id="restart" class="quiet">New match</button></header>
+  <section class="intro"><span class="eyebrow">SMALL GAME. GOOD WORDS.</span><h1>Pocket Scramble<span>.</span></h1><p>Seven letters. One good word. A little friendly competition.</p></section>
+  <section class="game" aria-label="Word game">
+    <div class="settings"><label>Opponent <select id="mode"><option value="computer">Computer</option><option value="human">Friend · pass & play</option></select></label><label id="difficulty-label">Difficulty <select id="difficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label></div>
+    <div class="scoreboard"><div><span id="player-name">YOU</span><strong id="you">0</strong></div><span id="round" class="round">ROUND 1 / 5</span><div><span id="opponent-name">COMPUTER</span><strong id="opponent">0</strong></div></div>
+    <div id="progress" class="progress" aria-hidden="true"></div>
+    <h2 id="prompt">What can you make?</h2><p class="hint" id="hint">Tap the letters or type your word below.</p>
+    <div id="rack" class="rack" aria-label="Available letters"></div>
+    <form id="form"><label class="sr-only" for="word">Your word</label><input id="word" enterkeyhint="done" maxlength="7" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="YOUR WORD" aria-describedby="message"><button id="submit" class="primary">Play word <span>↗</span></button></form>
+    <div class="tools"><button id="shuffle" class="quiet">↔ Shuffle</button><button id="clear" class="quiet">Clear</button><button id="pass" class="quiet">Pass round</button></div>
+    <p id="message" role="status" aria-live="polite">No rush. Longer words earn more points.</p>
+    <div id="result" hidden></div><button id="next" class="primary" hidden>Next round →</button>
+  </section>
+  <section class="notes"><div><span>01 / MAKE A WORD</span><p>Use each tile once. Words need at least two letters.</p></div><div><span>02 / SCORE SIMPLY</span><p>One point per letter. Use all seven for a 3-point bonus.</p></div><div><span>03 / PLAY FIVE</span><p>Same letters, fair chances. Highest total takes the match.</p></div></section>
+  <footer>Working-title prototype · Starter vocabulary, not a full dictionary.</footer>
+</main>
+</body>
+</html>
