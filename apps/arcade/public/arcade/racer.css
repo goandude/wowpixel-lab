@@ -5,3 +5,5 @@
 #road{image-rendering:auto}.boost span{min-width:105px}.touch{flex-wrap:wrap}@media(pointer:coarse){.touch button{padding:12px 14px;font-size:10px}}
 
 .screen{aspect-ratio:800/680}#road{height:100%}
+
+.hud{flex-wrap:wrap;gap:12px 18px}.hud>span{white-space:nowrap}#ammo{color:#87ffb2}#points{color:#fff49a}@media(max-width:550px){.hud{justify-content:flex-start}.hud b{margin-left:5px}#health{margin-left:auto}}
