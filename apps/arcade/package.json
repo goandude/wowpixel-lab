@@ -1,1 +1,24 @@
-{"dependencies":{"next":"15.5.26","react":"19.3.0","react-dom":"19.3.0"},"devDependencies":{"typescript":"5.9.3"},"name":"@wowpixel-lab/arcade","private":true,"scripts":{"build":"next build","dev":"next dev","lint":"eslint .","start":"next start"},"version":"0.1.0"}
+{
+  "dependencies": {
+    "firebase": "12.19.0",
+    "firebase-admin": "14.5.0",
+    "next": "15.5.26",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3"
+  },
+  "name": "@wowpixel-lab/arcade",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:community && next build",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "start": "next start",
+    "build:community": "esbuild community/client.js --bundle --format=iife --outfile=public/arcade/community.bundle.js --minify",
+    "test:community": "node --test community/validation.test.mjs"
+  },
+  "version": "0.1.0"
+}
