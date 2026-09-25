@@ -7,3 +7,5 @@
 .screen{aspect-ratio:800/680}#road{height:100%}
 
 .hud{flex-wrap:wrap;gap:12px 18px}.hud>span{white-space:nowrap}#ammo{color:#87ffb2}#points{color:#fff49a}@media(max-width:550px){.hud{justify-content:flex-start}.hud b{margin-left:5px}#health{margin-left:auto}}
+
+.road-legend{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:15px 20px;border-bottom:1px solid #34414f;font:10px/1.6 monospace;color:#b6c7cf}.road-legend b{display:block;color:#eee2c4}.road-legend .ammo-key{color:#88ffb5}.road-legend .crate-key{color:#ffd092}.road-legend .barrel-key{color:#ffad96}@media(max-width:550px){.road-legend{grid-template-columns:1fr;font-size:10px}}
