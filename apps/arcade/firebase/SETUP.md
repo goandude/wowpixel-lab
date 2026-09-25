@@ -4,7 +4,7 @@ Implemented in wowpixel-lab/apps/arcade. Racer is the first connected game. Othe
 
 ## Firebase console
 1. Enable Authentication > Sign-in method > Google and select a support email.
-2. Add the exact deployed hostname to Authentication > Settings > Authorized domains. The supplied hostname is `aracde.labs.wowpixel.app`; confirm that spelling. Add `localhost` for local Next.js testing. File URLs cannot use this integration.
+2. Add the exact deployed hostname to Authentication > Settings > Authorized domains. The live hostname reported by Firebase is `arcade.lab.wowpixel.app`. Add `localhost` for local Next.js testing. File URLs cannot use this integration.
 3. Create Cloud Firestore in production mode. Choose a region close to the Vercel function region.
 4. Publish the contents of firestore.rules using Firestore > Rules. All direct browser database access is denied. The authenticated Vercel server alone accesses the database. Alternatively run `firebase deploy --only firestore:rules --project arcade-9e532 --config apps/arcade/firebase/firebase.json` from the repository root with an authorized Firebase CLI login.
 5. Optionally configure a Firestore TTL policy on the `runs` collection group using the `expiresAt` field (24-hour lifetime). Private completed-run history is independent and remains available. The UI shows the most recent 20 runs.
